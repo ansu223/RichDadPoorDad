@@ -1,13 +1,34 @@
-export default async function handler(req, res) {
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// Parse URL and JSON data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Handle OGAds postback
+app.get('/api/postback', (req, res) => {
   const { id, payout, ip, user_id } = req.query;
 
-  console.log(`✅ OGAds Postback received:
-  - Offer ID: ${id}
-  - Payout: ${payout}
-  - IP: ${ip}
-  - User ID: ${user_id}`);
+  // Validate required fields
+  if (!id || !payout || !user_id) {
+    return res.status(400).json({ error: "Missing required parameters" });
+  }
 
-  // Example: you could reward the user here via GitHub JSON, DB, or Telegram Bot
+  // Log the conversion (replace with your logic)
+  console.log("📢 OGAds Postback Received:", {
+    offerId: id,
+    payout: payout,
+    ip: ip,
+    userId: user_id,
+  });
 
-  res.status(200).json({ success: true, message: 'Postback received' });
-}
+  // TODO: Save to DB, send to another API, etc.
+  
+  // Send success response
+  res.status(200).json({ success: true });
+});
+
+// Export for Vercel
+module.exports = app;
