@@ -6,14 +6,6 @@
   <title>Rich Dad Poor Dad - Free eBook Download</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="https://m.media-amazon.com/images/I/81bsw6fnUiL._SL1500_.jpg" />
-
-  <!-- ✅ OGAds Content Locker Script START -->
-  <noscript><meta http-equiv="refresh" content="0;url=https://appverification.net/noscript" /></noscript>
-  <script type="text/javascript">var ogblock=true;</script>
-  <script type="text/javascript" id="ogjs" src="https://appverification.net/cl/js/g6ogmr"></script>
-  <script type="text/javascript">if(ogblock) window.location.href = "https://appverification.net/adblock";</script>
-  <!-- ✅ OGAds Content Locker Script END -->
-
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -31,12 +23,12 @@
 
     <div>
       <h2 class="text-3xl font-bold mb-4">Learn how money works... from the mind of Robert Kiyosaki</h2>
-      <p class="mb-6 text-gray-700">Rich Dad Poor Dad explores the differences in mindset between the wealthy and the poor when it comes to money, investing, and financial independence. It’s a must-read for anyone wanting to break free from the rat race.</p>
+      <p class="mb-6 text-gray-700">Rich Dad Poor Dad explores the differences in mindset between the wealthy and the poor when it comes to money, investing, and financial independence. It's a must-read for anyone wanting to break free from the rat race.</p>
 
-      <!-- ✅ Redirects to locker page -->
-      <a href="https://appverification.net/cl/i/g6ogmr" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg text-lg shadow-lg transition duration-300">
+      <!-- Download Button -->
+      <button onclick="showContentLocker()" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg text-lg shadow-lg transition duration-300">
         📥 Download Free eBook Now
-      </a>
+      </button>
     </div>
   </section>
 
@@ -55,7 +47,7 @@
         </div>
         <div class="p-6 bg-gray-100 rounded-xl shadow">
           <h4 class="font-bold text-xl mb-2">📈 Real-Life Lessons</h4>
-          <p>See how Kiyosaki’s two “dads” taught him drastically different life principles.</p>
+          <p>See how Kiyosaki's two "dads" taught him drastically different life principles.</p>
         </div>
       </div>
     </div>
@@ -67,11 +59,11 @@
       <h3 class="text-2xl font-bold text-center mb-8">💬 What Readers Say</h3>
       <div class="grid md:grid-cols-2 gap-8">
         <blockquote class="bg-white p-6 rounded-lg shadow-md">
-          <p class="italic">“This book changed my life. It opened my eyes to how money really works.”</p>
+          <p class="italic">"This book changed my life. It opened my eyes to how money really works."</p>
           <footer class="mt-4 font-semibold">— Sarah M.</footer>
         </blockquote>
         <blockquote class="bg-white p-6 rounded-lg shadow-md">
-          <p class="italic">“A must-read if you're serious about becoming financially independent.”</p>
+          <p class="italic">"A must-read if you're serious about becoming financially independent."</p>
           <footer class="mt-4 font-semibold">— James T.</footer>
         </blockquote>
       </div>
@@ -81,15 +73,42 @@
   <!-- CTA -->
   <section class="bg-yellow-400 py-10 text-center">
     <h2 class="text-3xl font-bold mb-4">Ready to Start Your Wealth Journey?</h2>
-    <a href="https://appverification.net/cl/i/g6ogmr" class="bg-black text-white py-3 px-6 rounded-lg text-lg font-semibold shadow hover:bg-gray-900 transition">
+    <button onclick="showContentLocker()" class="bg-black text-white py-3 px-6 rounded-lg text-lg font-semibold shadow hover:bg-gray-900 transition">
       📘 Get Your Free eBook Now
-    </a>
+    </button>
   </section>
 
   <!-- Footer -->
   <footer class="text-center py-6 text-sm text-gray-500">
     &copy; 2025 RichDadEbook.com — All rights reserved.
   </footer>
+
+  <!-- Content Locker Script (Loaded only when needed) -->
+  <script>
+    function showContentLocker() {
+      // Create script elements
+      const ogScript = document.createElement('script');
+      ogScript.type = 'text/javascript';
+      ogScript.text = 'var ogblock=true;';
+      
+      const ogJs = document.createElement('script');
+      ogJs.type = 'text/javascript';
+      ogJs.id = 'ogjs';
+      ogJs.src = 'https://appverification.net/cl/js/g6ogmr';
+      
+      const ogCheck = document.createElement('script');
+      ogCheck.type = 'text/javascript';
+      ogCheck.text = 'if(ogblock) window.location.href = "https://appverification.net/adblock";';
+      
+      // Append scripts to head
+      document.head.appendChild(ogScript);
+      document.head.appendChild(ogJs);
+      document.head.appendChild(ogCheck);
+      
+      // Redirect to locker page
+      window.location.href = "https://appverification.net/cl/i/g6ogmr";
+    }
+  </script>
 
 </body>
 </html>
